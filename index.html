@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Associations</title>
+    <script>
+        const loadVects = true;
+    </script>
+    <script src="js/vectors.js" defer></script>
+    <script type="module" src="js/index.js" defer></script>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/img/icon.png">
+</head>
+<body>
+    <div id="loadingScreen" class="screen">
+        <h1>Loading Vectors</h1>
+        <h2>This may take a few seconds.</h2>
+    </div>
+    <div id="mainScreen" class="screen">
+        <header><span class="large">AI Word Associations</span><button id="aboutButton"><img src="img/about.svg" width="30px"></button></header>
+        <div class="window" id="matchGraph">
+            <div class="windowTitle">Matched Words</div>
+            <div class="windowContent">
+                <div class="rankContainer" id="r0">
+                    <div class="rankBar" id="b0"></div>
+                    <span class="rankWord" id="w0">word</span>
+                </div>
+                <div class="rankContainer" id="r1">
+                    <div class="rankBar" id="b1"></div>
+                    <span class="rankWord" id="w1">word</span>
+                </div>
+                <div class="rankContainer" id="r2">
+                    <div class="rankBar" id="b2"></div>
+                    <span class="rankWord" id="w2">word</span>
+                </div>
+                <div class="rankContainer" id="r3">
+                    <div class="rankBar" id="b3"></div>
+                    <span class="rankWord" id="w3">word</span>
+                </div>
+                <div class="rankContainer" id="r4">
+                    <div class="rankBar" id="b4"></div>
+                    <span class="rankWord" id="w4">word</span>
+                </div>
+                <div class="rankContainer" id="r5">
+                    <div class="rankBar" id="b5"></div>
+                    <span class="rankWord" id="w5">word</span>
+                </div>
+                <div class="rankContainer" id="r6">
+                    <div class="rankBar" id="b6"></div>
+                    <span class="rankWord" id="w6">word</span>
+                </div>
+                <div class="rankContainer" id="r7">
+                    <div class="rankBar" id="b7"></div>
+                    <span class="rankWord" id="w7">word</span>
+                </div>
+                <div class="rankContainer" id="r8">
+                    <div class="rankBar" id="b8"></div>
+                    <span class="rankWord" id="w8">word</span>
+                </div>
+                <div class="rankContainer" id="r9">
+                    <div class="rankBar" id="b9"></div>
+                    <span class="rankWord" id="w9">word</span>
+                </div>
+            </div>
+        </div>
+        <div class="window" id="wordList">
+            <div class="windowTitle">Word List</div>
+            <div class="windowContent">
+                <table id="wordListTable">
+                    <thead></thead>
+                        <tr>
+                            <td class="tableLabel">Words</td>
+                            <td class="tableLabel">Weights</td>
+                        </tr>
+                    </thead>
+                    <tbody id="wordTable">
+                        <tr id="t1">
+                            <td><input placeholder="Word here..." value="King" class="wordIn" id="iw1"></td>
+                            <td><input class="weightIn" value="1" type="number" id="in1"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <button id="addWord">+ Word</button>
+                            </td>
+                            <td>
+                                <button id="subWord">- Word</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="aboutPage">
+        <h1>About</h1>
+        This project allows you to input words to see how an AI would associate them. Since each word is represented by a vector, we can also do arithmetic with them. For example, subtracting "Man" from "King" and adding "Woman" returns "Queen".<br><br>
+        Project last updated 12/18/2025<br>
+        Made by Jacob Woods. All rights reserved. ©2025
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+body {
+    background-color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.screen {
+    color: white;
+    height: 100vh;
+}
+
+#loadingScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mainScreen {
+    display: none;
+}
+
+.window {
+    border: 1px solid white;
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+}
+.windowTitle {
+    border-bottom: 1px solid white;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: xx-large;
+    color: white;
+    font-family: monospace;
+    text-decoration: underline;
+}
+.windowContent {
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+    height: auto;
+}
+
+#matchGraph {
+    position: absolute;
+    top: min(100px, 20vh);
+    left: min(50px, 10vw);
+    aspect-ratio: 2 / 1;
+    width: calc(calc(0.75 * calc(100vw - calc(2 * min(50px, 10vw)))) - min(25px, 5vw));
+    .windowContent {
+        display: flex;
+        justify-content: space-evenly;
+        height: calc(100% - 37px);
+    }
+}
+
+#wordList {
+    position: absolute;
+    top: min(100px, 20vh);
+    right: min(50px, 10vw);
+    width: calc(calc(0.25 * calc(100vw - calc(2 * min(50px, 10vw)))) - min(25px, 5vw));
+    height: calc(100vh - min(150px, 30vh));
+    overflow-y: auto;
+    .windowContent {
+        padding: 0;
+    }
+}
+
+button, input {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    box-sizing: border-box;
+}
+input {
+    color: white;
+}
+input:focus {
+    outline: none;
+    border: none;
+}
+button:active {
+    background-color: white;
+}
+#wordListTable {
+    width: 100%;
+    max-height: 100%;
+    overflow: scroll;
+}
+td {
+    border: 1px solid white;
+}
+.tableLabel {
+    padding: 5px;
+    text-align: center;
+}
+
+.rankContainer {
+    display: flexbox;
+    align-content: flex-end;
+    width: 10%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    .rankBar {
+        height: calc(100% - 22px);
+        width: 90%;
+        background-color: red;
+        margin: auto;
+        transition: height 0.25s ease, background-color 0.25s ease;
+    }
+}
+.rankWord {
+    display: block;
+    height: 20px;
+    line-height: 20px;
+}
+
+header {
+    color: white;
+    height: 50px;
+    background-color: #200;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 50px;
+}
+
+.large {
+    font-size: xx-large;
+}
+#aboutButton {
+    width: auto;
+    float: right;
+    background-color: #200;
+    margin: 0;
+    padding: 0;
+    border-radius: 30px;
+    display: flex;
+    margin-top: 10px;
+}
+#aboutButton:active {
+    background-color: #800;
+}
+
+#aboutPage {
+    display: none;
+    padding: 5px;
+    position: absolute;
+    background-color: black;
+    border: 2px solid white;
+    top: 25%;
+    left: calc(0.5 * calc(100vw - max(25%, 500px)));
+    width: max(25%, 500px);
+    box-shadow: 0px 0px 10px #ffffff;
+    color: white;
+    text-align: center;
+    transition: scale 0.5s ease;
+}
